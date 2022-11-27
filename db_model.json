@@ -38,20 +38,12 @@
             "type": "String",
             "enum": [
                 "admin",
-                "user"
+                "tutor",
+                "niño"
             ],
-            "default": "user"
-        }
-    
-    },
-    "niño":{
-        "nombre":{
-            "type": "String",
-            "required": true,
-            "minLegth": 1,
-            "maxLegth": 100
+            "default": "tutor"
         },
-
+    
         "nacimiento":{
             "type": "String",
             "required": true,
@@ -64,51 +56,9 @@
             "required": true,
             "minLegth": 1,
             "maxLegth": 100
-        },
-    
-        "Parentesco":{
-            "type": "String",
-            "required": true,
-            "minLegth": 1,
-            "maxLegth": 100
         }
-    
-        
-    },
 
-    "Administradores":{
-
-        "nombre":{
-            "type": "String",
-            "required": true,
-            "minLegth": 1,
-            "maxLegth": 100
-        },
-        
-        "correo":{
-            "type": "String",
-            "required": true,
-            "minLegth": 1,
-            "maxLegth": 100
-        },
-    
-        "telefono":{
-            "type": "String",
-            "required": true,
-            "minLegth": 1,
-            "maxLegth": 100
-        },
-
-        "rol":{
-            "type": "String",
-            "enum": [
-                "admin",
-                "user"
-            ],
-            "default": "user"
-        }
-    
     }
-
+ 
 }
 
