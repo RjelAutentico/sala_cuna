@@ -1,0 +1,35 @@
+{
+    "tutor":{
+        "nombre":{
+            "type": "String",
+            "required": true,
+            "minLegth": 1,
+            "maxLegth": 100
+        },
+        
+        "correo":{
+            "type": "String",
+            "required": true,
+            "minLegth": 1,
+            "maxLegth": 100
+        },
+    
+        "telefono":{
+            "type": "String",
+            "required": true,
+            "minLegth": 1,
+            "maxLegth": 100
+        },
+
+        "":{
+            "type": "String",
+            "required": true,
+            "minLegth": 1,
+            "maxLegth": 100
+        },
+    }
+}/
+
+{
+    "niño"2
+}/
