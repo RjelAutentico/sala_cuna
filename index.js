@@ -4,15 +4,21 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const { default: mongoose } = require('mongoose');
 
+
+
 const app = express();
 
 dotenv.config();
 
 const usuarioRoutes = require('./routes/usuarioRoutes');
+const fileRoutes = require('./routes/fileRoutes')
+
 app.use(cors());
 app.use(express.json());
 app.options('*', cors());
 app.use('/api', usuarioRoutes);
+app.use('/api', fileRoutes)
+
 
 const options = {
     useNewUrlParser: true,
