@@ -8,6 +8,12 @@ const app = express();
 
 dotenv.config();
 
+const usuarioRoutes = require('./routes/usuarioRoutes');
+app.use(cors());
+app.use(express.json());
+app.options('*', cors());
+app.use('/api', usuarioRoutes);
+
 const options = {
     useNewUrlParser: true,
     useCreateIndex: true,
