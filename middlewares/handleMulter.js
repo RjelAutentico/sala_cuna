@@ -7,7 +7,7 @@ const storage = multer.diskStorage({
         if(!fs.existsSync(route)){
             fs.mkdirSync(route, { recursive: true})
         }
-        cb(null,ruta)
+        cb(null,route)
     },
     filename: function (req,file,cb){
         let fecha = new Date();
