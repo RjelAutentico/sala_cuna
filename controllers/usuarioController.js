@@ -23,7 +23,7 @@ const createUsuario = (req,res) =>{
 
 }
 
-const getUsuario = (req, res) => {
+const getUsuarios = (req, res) => {
     Usuario.find({},(error,usuarios)=>{
         if(error){
             return res.status(400).send({message:"No se pudo realizar la busqueda"})
@@ -35,7 +35,7 @@ const getUsuario = (req, res) => {
     })
 }
 
-const upgrateUsuario = (req, res) => {
+const updateUsuario = (req, res) => {
     console.log(req.params.id)
     const { id } = req.params
     usuario.findByIdAndUpdate(id,req.body, (error,product) => {
@@ -50,8 +50,39 @@ const upgrateUsuario = (req, res) => {
     })
 }
 
+const deleteUsuario = (req, res) => {
+    const {id} = req.params
+    Usuario.findByIdAndDelete(id,(error, usuario) => {
+        if(error){
+            return res.status(400).send({message: "No se a podido eliminar el usuario"})
+
+        }
+        if(!usuario){
+            return res.status(404).send({message: "No se a podido encontrar el usuario"})
+        }
+        return res.status(200).send({message: "Se ha eliminado el usuario"})
+    })
+
+}
+
+const getUsuario = (req, res) => {
+    const {id} = req.params
+    Usuario.findById(id,(error, usuario) => {
+        if(error){
+            return res.status(400).send({message: "No se a podido modificar el usuario"})
+
+        }
+        if(!usuario){
+            return res.status(404).send({message: "No se a podido encontrar el usuario"})
+        }
+        return res.status(200).send(usuario)
+    })
+}
+
 module.exports = {
     createUsuario,
     getUsuarios,
-    updateUsuario
+    updateUsuario,
+    deleteUsuario,
+    getUsuario
 }
