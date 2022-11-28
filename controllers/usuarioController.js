@@ -29,7 +29,7 @@ const getUsuarios = (req, res) => {
             return res.status(400).send({message:"No se pudo realizar la busqueda"})
         }
         if(usuarios.length == 0){
-            return res.status(404).send({"No se encontraron usuarios"})
+            return res.status(404).send({message: "No se encontraron usuarios"})
         }
         return res.status(200).send(usuarios)
     })

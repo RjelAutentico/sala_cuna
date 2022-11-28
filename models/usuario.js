@@ -39,12 +39,9 @@ const usuarioSchema = new Schema({
 
     rol:{
         type: String,
-        enum: [
-            admin,
-            tutor,
-            niño
-        ],
-        default: tutor
+        required: true,
+        minLegth: 1,
+        maxLegth: 100
     },
 
     nacimiento:{
