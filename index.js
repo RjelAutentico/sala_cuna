@@ -16,15 +16,11 @@ app.use('/api', usuarioRoutes);
 
 const options = {
     useNewUrlParser: true,
-    useCreateIndex: true,
     autoIndex: true,
     keepAlive: true,
-    poolSize: 10,
-    bufferMaxEntries: 0,
     connectTimeoutMS: 10000,
     socketTimeoutMS: 45000,
     family: 4,
-    useFindAndModify: false,
     useUnifiedTopology: true,
 }
 mongoose.connect(process.env.DB,options,(error)=>{
